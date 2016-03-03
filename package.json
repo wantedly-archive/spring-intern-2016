@@ -1,7 +1,7 @@
 {
-  "name": "react-transform-boilerplate",
+  "name": "wantedly-spring-intern-2016",
   "version": "1.0.0",
-  "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
+  "description": "Tutorial for Wantedly Spring Intern 2016",
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -11,12 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-transform-boilerplate.git"
+    "url": "https://github.com/wantedly/spring-intern-2016.git"
   },
   "keywords": [
     "react",
     "reactjs",
-    "boilerplate",
     "hot",
     "reload",
     "hmr",
@@ -26,12 +25,9 @@
     "babel",
     "react-transform"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Kento Moriwaki <kento@wantedly.com> (http://github.com/KentoMoriwaki)",
   "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/gaearon/react-transform-boilerplate/issues"
-  },
-  "homepage": "https://github.com/gaearon/react-transform-boilerplate",
+  "homepage": "http://site.wantedly.com/intern2016spring/",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "babel-core": "^6.3.15",
