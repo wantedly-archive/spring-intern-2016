@@ -1,7 +1,7 @@
 ## CSS
 
 効率的にCSSを書いてスタイルを実装する方法を学ぶ。
-先ほど作ったPortalProject Componentのデザインを実装する。
+先ほど作った`PortalProject`Componentのデザインを実装する。
 
 ## CSSの問題点
 

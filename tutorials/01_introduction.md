@@ -2,6 +2,8 @@
 
 テーマ: 「モダンなウェブアプリケーション開発入門」
 
+Wantedlyの[学生向けポータル](https://www.wantedly.com/campaign/newgrad)を書き換える。
+
 ## 学べる技術
 
 以下の技術に触れて、理解を深めることができる
@@ -10,17 +12,13 @@
 - ES2015
 - webpack
 
-## 内容
-
-Wantedlyの[学生向けポータル](https://www.wantedly.com/campaign/newgrad)を書き換える。
-
 
 ## 準備
 
 ### レポジトリのclone
 
 ```
-git clone ...
+git clone https://github.com/wantedly/spring-intern-2016.git
 cd spring-intern-2016
 ```
 

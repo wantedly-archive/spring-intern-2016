@@ -30,9 +30,8 @@ PortalSlider Componentを作る際に、どのように使うことを想定す�
 
 PortalSlider Componentはどういう状態を持つか考える。
 
-持っている状態は、今何番目の要素を表示しているかという情報。
-
-左端に何個目の要素を表示しているか(currentIndex)
+持っている状態は、今どの要素を表示しているかという情報。すなわち、
+左端に何個目の要素を表示しているか(currentIndex)。
 
 初期状態では0で、">"をクリックすると3に、更に"<"をクリックすると0に戻る。
 
@@ -40,7 +39,7 @@ PortalSlider Componentはどういう状態を持つか考える。
 
 次にHTMLとCSSでどうやって表現するかを考える。
 
-方法としては、各要素を表示する座標を計算する方法がある。
+各要素を表示する座標を計算する方法をとる。
 ページを送るごとに、各要素が表示されるべき場所を計算して、設定する。
 
 ![Slider Position](./assets/slider_position.png)
@@ -49,8 +48,8 @@ CSSとしては、座標を設定する方法はいくつかあるが、パフ�
 
 ## 大まかなComponent
 
-コンポーネントの中の要素は、`this.props.children`として受け取ることができる。
 Component定義の大枠はこんな感じ。
+コンポーネントの中の要素は、`this.props.children`として受け取ることができる。
 
 ```
 import React, { Component } from 'react'
@@ -70,7 +69,7 @@ export default PortalSlider extends Component {
   render() {
     return <div>
       { this.props.children.map((child, index) => {
-        return <div style={this.calcStyle(index - this.state.currentIndex)}>
+        return <div style={this.calcStyle(index - this.state.currentIndex)} key={index}>
           { child }
         </div>
       }) }
@@ -79,51 +78,58 @@ export default PortalSlider extends Component {
 }
 ```
 
+初期の座標を合わせるために、以下のスタイルを追加する。
+
+```
+.base {
+  position: relative;
+}
+
+.item {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+```
+
+```
+<div className={styles.base}>
+  { this.props.children.map((child, index) => {
+    return <div style={this.calcStyle(index - this.state.currentIndex)} key={index} className={styles.item}>
+      { child }
+    </div>
+  }) }
+</div>
+```
+
+これで、各要素が横に並んだ状態が出来上がる。
+
 
 ## 状態の変更
 
-"次へ"と"前へ"ボタンを表示する
+ユーザーのアクションにより、状態(currentIndex)がどう変化するかを実装する。
+"次へ"と"前へ"ボタンを表示することを考える。
 
-`src/PortalSlider.js`
+まずは、状態を変えるメソッド `onClickPrev()`と`onClickNext()` を実装する。
 
-```
-export default class PortalSlider extends Component {
-  render() {
-    return (
-      <div className={styles.base}>
-        <a>前へ</a>
-        <a>次へ/a>
-        { this.props.children.map((child, index) => {
-          return <div key={index}>{ child }</div>
-        }) }
-      </div>
-    )
-  }
-}
-```
-
-初期状態を設定する
 
 ```
-constructor(props) {
-  super(props)
-  this.state = {
-    currentIndex: 0
-  }
-}
-```
-
-"次へ"と"前へ"ボタンを押した時にstateを変更する。
-
-```
+// src/PortalSlider.js
 onClickPrev() {
-  this.setState({ currentIndex: this.state.currentIndex - 3 })
+  this.setState({
+    currentIndex: this.state.currentIndex - 3
+  })
 }
-
 onClickNext() {
-  this.setState({ currentIndex: this.state.currentIndex + 3 })
+  this.setState({
+    currentIndex: this.state.currentIndex + 3
+  })
 }
+```
 
+次に、ボタンを配置して、クリックされたら今実装したメソッドが呼ばれるようにする。
+
+```
 render() {
   return (
     <div className={styles.base}>
@@ -137,31 +143,16 @@ render() {
 }
 ```
 
-状態から、位置を計算する。
-位置はCSSの、`transform: translate(x, y)`プロパティを使って表現する。
+`.bind(this)` を忘れると動かないので注意。
+
+これで、「前へ」「次へ」を押すと、ページが切り替わるようになった。
+
+最後に、CSSでAnimationをつければ完璧。
 
 ```
-calcStyleForIndex(index) {
-  let position = index - this.state.currentIndex
-  let style = {
-    transform: `translate(${position * 320}px, 0)`
-  }
-  return style
+.item {
+  transition: all 300ms ease;
 }
-```
-
-```
-{ this.props.children.map((child, index) => {
-  return <div key={index} style={this.calcStyleForIndex(index)}>
-    { child }
-  </div>
-}) }
-```
-
-Animationを付ける
-
-```
-transition: all 300ms ease;
 ```
 
 ## [練習]高度なアニメーション
@@ -172,7 +163,8 @@ transition: all 300ms ease;
 
 ヒント
 
-`transition-delay`プロパティを仕様することで、アニメーションをずらすことができる。
+- `transition-delay`プロパティを仕様することで、アニメーションをずらすことができる。
+- もう一つ状態が必要
 
 答え
 
@@ -182,29 +174,22 @@ constructor(props) {
 
   this.state = {
     currentIndex: 0,
-    perPage: 3,
     ltr: true, // Left to Right
   }
 }
 
 setCurrentIndex(index) {
-  let nextIndex = [0, index, this.props.children.length - this.state.perPage].sort((a, b) => a - b)[1]
   this.setState({
-    currentIndex: nextIndex,
-    ltr: nextIndex >= this.state.currentIndex
+    currentIndex: index,
+    ltr: index >= this.state.currentIndex
   })
 }
 
-calcStyleForIndex(index) {
-  let offset = index - this.state.currentIndex
-  let style = {}
-  style.transform = `translate(${offset * 320}px, 0)`
-  if (offset >= 0 && offset < this.state.perPage) {
-    let delay = (this.state.ltr ? offset : this.state.perPage - 1 - offset) * 100
-    style.transitionDelay = `${delay}ms`
+calcStyle(index) {
+  let delay = this.state.ltr ? index : 2 - index
+  return {
+    transform: `translate(${index * 320}px, 0)`,
+    transitionDelay: `${delay * 100}ms`,
   }
-  return style
 }
-
-
 ```

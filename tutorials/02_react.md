@@ -12,13 +12,13 @@ Componentとは、**状態(State)** と **見た目(View)** をひとまとま�
 
 ## 状態(State)
 
-例えば、以下のようなものが状態と呼ばれる。
+例えば、以下のようなものが**状態**と呼ばれる。
 
 ### Google
 
 ![img](./assets/google_search.png)
 
-状態は、ユーザーが入力したキーワード。
+ユーザーが入力したキーワードが状態。
 
 ### Facebook Messenger
 
@@ -65,12 +65,12 @@ class App extends Component {
 
 ## React Developer Tools
 
-状態が変わると見た目が変わる様子を確認するのに、[React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)が便利。
+状態が変わると見た目が変わる様子を確認するのに、[React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) が便利。
 Chromeの開発者ツールからComponentのStateを変更することができる。
 
 ![Devtool](./assets/devtool_sample.png)
 
-stateを手動で変更すると、Viewが自動的に変わることが確認できる。
+Stateを手動で変更すると、Viewが自動的に変わることが確認できる。
 
 
 ## 開発の流れ
@@ -79,6 +79,6 @@ stateを手動で変更すると、Viewが自動的に変わることが確認�
 
 - ページをどのようなComponentに切り分けるか大まかに決める
 - Componentが持つ状態を考える
- - スイッチのon/offや、入力されたテキストなど。
+ - スイッチのon/offや、入力されたテキストなど
 - 見た目を実装する
 - アクション等による状態の変更を実装する
