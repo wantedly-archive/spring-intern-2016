@@ -51,7 +51,7 @@ JSX内の繰り返し処理は、`map()`を使ってかかれることが多い�
 
 ```
 render() {
-  let pupularProject = this.state.data.data.sections[3]
+  let popularProject = this.state.data.data.sections[3]
   return (
     <div>
       { popularProject.projects.map((project) => {
@@ -70,7 +70,7 @@ render() {
 
 ```
 render() {
-  let pupularProject = this.state.data.data.sections[3]
+  let popularProject = this.state.data.data.sections[3]
   let projects = popularProject.projects.map((project) => {
     return <div key={project.id}>
       <a href={`https://www.wantedly.com/projects/${project.id}`} target="_blank">
