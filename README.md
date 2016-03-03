@@ -12,4 +12,4 @@
 1. [JSX](./tutorials/06_jsx.md)
 1. [CSS](./tutorials/07_css.md)
 1. [State](./tutorials/08_state.md)
-1. [Practice](./tutorials/09_state.md)
+1. [Practice](./tutorials/09_practice.md)
