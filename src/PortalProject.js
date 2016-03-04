@@ -19,7 +19,7 @@ export default class PortalProject extends Component {
           <h3 className={styles.companyName}>{ project.company.name }</h3>
         </div>
         <div className={styles.friendsBlock}>
-          <p className={styles.userFriends}>今働いている人</p>
+          <p className={styles.userFriends}>ここで働いている知り合い</p>
           <div className={styles.userSet}>
             <img className={styles.userAvatar} src={"https://d2v9k5u4v94ulw.cloudfront.net/small_light(dw=60,dh=60,da=s,ds=s,cw=60,ch=60,cc=FFFFFF)/assets/images/213854/original/4ff5830c-9724-4b31-91a4-d1c371ab7037.png?1446280219"} />
             <img className={styles.userAvatar} src={"https://d2v9k5u4v94ulw.cloudfront.net/small_light(dw=60,dh=60,da=s,ds=s,cw=60,ch=60,cc=FFFFFF)/assets/images/13152/original/4937af9f-a3ba-4740-bb94-90b6f44844cb.png?1446107119"} />

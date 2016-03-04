@@ -1,7 +1,20 @@
 .base {
   width: 960px;
-  height: 500px;
+  height: 600px;
   overflow : hidden;
   position : relative;
   margin-bottom: 30px;
+}
+
+.body {
+  width: 960px;
+  margin-right: auto;
+  margin-left : auto;
+}
+
+.title {
+  margin: 0;
+  padding: 18px 0 12px;
+  font-size: 17px;
+  color: #999999;
 }
