@@ -33,6 +33,7 @@ export default class App extends Component {
     let data = this.state.data
     let popularProject = data && data.data.sections[3]
     let popularNewGrad = data && data.data.sections[4]
+    let popularIntern = data && data.data.sections[5]
     return(
        <div>
         { data ? (
@@ -50,6 +51,15 @@ export default class App extends Component {
               <p>新卒採用の募集</p>
               <PortalSlider>
                 { popularNewGrad.projects.map((project) => {
+                  return <PortalProject project={project} key={project.id} />
+                }) }
+              </PortalSlider>
+            </div>
+
+            <div className={styles.base}>
+              <p>新卒インターンの募集</p>
+              <PortalSlider>
+                { popularIntern.projects.map((project) => {
                   return <PortalProject project={project} key={project.id} />
                 }) }
               </PortalSlider>
