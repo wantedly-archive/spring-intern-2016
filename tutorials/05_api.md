@@ -67,7 +67,7 @@ Promiseよりもっと分かりやすい方法として、ES2015では、Async/A
 
 これは、非同期な処理を同期的に書くための方法で、上のコードを書き換えると以下のようになる。
 
-```
+```javascript
 async fetchPortalData() {
   // Create headers
   let headers = new Headers()

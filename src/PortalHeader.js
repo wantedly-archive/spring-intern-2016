@@ -6,20 +6,18 @@ export default class PortalHeader extends Component {
     this.props = {
       width: 320,
       hright: 240,
-      loop: 'loop',
-      autoPlay: 'autoPlay'
     }
   }
   render()　{
     return (
       <div>
-        <article>
-          <video width={this.props.width} height={this.props.height} autoPlay>
-            <source src="https://dubpy8abnqmkw.cloudfront.net/images/campaign/newgrad/sample_video.webm" type="video/webm" media="all" />
-            <source src="https://dubpy8abnqmkw.cloudfront.net/images/campaign/newgrad/sample_video.mp4" type="video/mp4" media="all" />
-            <p>このブラウザではビデオを再生できません。</p>
-          </video>
-        </article>
+      <div>
+      <video width={this.props.width} height={this.props.height} loop autoPlay>
+      <source src="https://dubpy8abnqmkw.cloudfront.net/images/campaign/newgrad/sample_video.webm" type="video/webm" media="all" />
+      <source src="https://dubpy8abnqmkw.cloudfront.net/images/campaign/newgrad/sample_video.mp4" type="video/mp4" media="all" />
+      <p>このブラウザではビデオを再生できません。</p>
+      </video>
+      </div>
       </div>
     )
   }

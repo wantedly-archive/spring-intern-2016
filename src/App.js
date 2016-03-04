@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import PortalProject from './PortalProject.js'
-import PortalSlider from './PortalSlider.js'
+
+import PortalProject from './PortalProject'
+import PortalSlider from './PortalSlider'
+import PortalEyecatches from './PortalEyecatches'
 import PortalHeader from './PortalHeader.js'
+import styles from './PortalWrapper.css'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
-    // 状態の定義
-    this.state = { message: "Reactのシンプルなコンポーネントです" }
+      // 状態の定義
+      this.state = { message: "Reactのシンプルなコンポーネントです" }
   }
 
   componentDidMount(){
@@ -30,23 +33,57 @@ export default class App extends Component {
 
 
   render() {
-    // 見た目の定義
     let data = this.state.data
-    let popularProject = data && data.data.sections[3]
-    return(
-      <div>
-        <PortalHeader/>
-        { data ? (
-          <PortalSlider>
-            { popularProject.projects.map((project) => {
-              return <PortalProject project={project} key={project.id} />
-            }) }
-          </PortalSlider>
 
-        ) : (
-          <p>Now Loading...</p>
-        ) }
-      </div>
-    )
+    if (data === undefined) {
+      return <div>Now Loading...</div>
+    }
+
+    console.log(data) // 受け取った内容がコンソールに出力される
+
+    // let enterprizeBanners = data && data.data.sections[0]
+    // let popularProject1 = data && data.data.sections[1]
+    // let popularProject2 = data && data.data.sections[2]
+    let popularProject3 = data.data.sections[3]
+
+    return (
+        <div>
+          <PortalHeader/>
+          <div className={styles.base}>
+          <PortalSlider>
+          { popularProject3.projects.map((project) => {
+              return <PortalProject project={project} key={project.id} />
+          })}
+          </PortalSlider>
+          </div>
+          <div className={styles.base}>
+          <PortalSlider>
+          { popularProject3.projects.map((project) => {
+              return <PortalProject project={project} key={project.id} />
+          })}
+          </PortalSlider>
+          </div>
+        </div>
+
+        ) 
+  }
+
+  componentDidMount() {
+    this.fetchPortalData()
+  }
+
+  async fetchPortalData() {
+    // Create headers
+    let headers = new Headers()
+      headers.append('Authorization', `Basic ${btoa('spring:intern_2016')}`)
+      // Call API
+      let res = await fetch("https://www.wantedlyapp.com/api/intern/portal", { headers })
+      let json = await res.json()
+      console.log(json) // 受け取った内容がコンソールに出力される
+      this.setState({
+        data: json
+      })
   }
 }
+
+
