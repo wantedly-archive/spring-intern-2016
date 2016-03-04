@@ -54,7 +54,7 @@ Component定義の大枠はこんな感じ。
 ```
 import React, { Component } from 'react'
 
-export default PortalSlider extends Component {
+export default class PortalSlider extends Component {
   constructor(props) {
     super(props)
     this.state = { currentIndex: 0 }
