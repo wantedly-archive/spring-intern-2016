@@ -11,7 +11,7 @@ export default class PortalSlider extends Component {
 
     calcStyle(index) {
         return {
-            transform: `translate(${index * 320}px, 0)`
+            transform: `translate(${-this.state.currentIndex*320}px, 0)`
         }
     }
 
