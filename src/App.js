@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import PortalProject from './PortalProject';
+import RecruitCard from './RecruitCard';
 import PortalSlider from './PortalSlider';
 import styles from './style.css';
 
@@ -38,7 +38,7 @@ export default class App extends Component {
                 { data ? (
                         <PortalSlider>
                         { popularProject.projects.map((project) => {
-                            return  <PortalProject project={project} key={project.id} />
+                            return  <RecruitCard project={project} key={project.id} />
                         })}
                     </PortalSlider>
                 ) : (
