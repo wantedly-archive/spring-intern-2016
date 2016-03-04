@@ -1,5 +1,5 @@
 .item {
-  transition: all 300ms ease;
+    transition: all 300ms ease;
 }
 
 .left {
@@ -7,7 +7,7 @@
 
 .center {
     display: flex;
-    justify-content: flex-start;
+    overflow: hidden;
 }
 
 .right {
