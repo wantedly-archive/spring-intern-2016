@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import PortalProject from './PortalProject'
 import PortalSlider from './PortalSlider'
 
+import styles from './PortalWrapper.css'
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -30,14 +32,30 @@ export default class App extends Component {
     // 見た目の定義
     let data = this.state.data
     let popularProject = data && data.data.sections[3]
+    let popularNewGrad = data && data.data.sections[4]
     return(
-      <div>
+       <div>
         { data ? (
-          <PortalSlider>
-            { popularProject.projects.map((project) => {
-              return <PortalProject project={project} key={project.id} />
-            }) }
-          </PortalSlider>
+          <div>
+            <div className={styles.base}>
+              <p>ベスト新着の募集</p>
+              <PortalSlider>
+                { popularProject.projects.map((project) => {
+                  return <PortalProject project={project} key={project.id} />
+                }) }
+              </PortalSlider>
+            </div>
+
+            <div className={styles.base}>
+              <p>新卒採用の募集</p>
+              <PortalSlider>
+                { popularNewGrad.projects.map((project) => {
+                  return <PortalProject project={project} key={project.id} />
+                }) }
+              </PortalSlider>
+            </div>
+
+          </div>
         ) : (
           <p>Now Loading...</p>
         ) }

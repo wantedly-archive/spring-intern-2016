@@ -1,0 +1,12 @@
+.base {
+  position: relative;
+}
+
+.item {
+  position: absolute;
+  top: 30px;
+}
+
+.item {
+  transition: all 300ms ease;
+}

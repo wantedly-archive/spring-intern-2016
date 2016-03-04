@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import styles from './PortalSlider.css'
+
 export default class PortalSlider extends Component {
   constructor(props) {
     super(props)
@@ -14,15 +16,28 @@ export default class PortalSlider extends Component {
     }
   }
 
+  onClickPrev() {
+    this.setState({
+      currentIndex: this.state.currentIndex - 3
+    })
+  }
+
+  onClickNext() {
+    this.setState({
+      currentIndex: this.state.currentIndex + 3
+    })
+  }
+
   render() {
     return (
-      <div>
-        { this.props.children.map((child, index) => {
-          return <div style={this.calcStyle(index - this.state.currentIndex)} key={index}>
-            { child }
-          </div>
-        }) }
-      </div>
+        <div className={styles.base}>
+          <a onClick={this.onClickPrev.bind(this)}>前へ</a>
+          <a onClick={this.onClickNext.bind(this)}>次へ</a>
+          { this.props.children.map((child, index) => {
+            return <div style={this.calcStyle(index - this.state.currentIndex)} key={index} className={styles.item}>
+            { child }</div>
+          }) }
+        </div>
     )
   }
 
