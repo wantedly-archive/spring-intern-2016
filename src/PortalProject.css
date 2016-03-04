@@ -71,3 +71,39 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.friendsBlock{
+  position:relative;
+  width: 100%;
+  height: 100%;
+}
+
+.userFriends{
+  position: relative;
+  color: #00A4BB;; 
+}
+
+.userSet{
+  position: relative;
+  width: 100%;
+}
+
+.userAvatar{
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #EBEDEF;
+  border-radius: 50%;
+  margin: 0 8px 0 8px;
+}
+
+p.userName{
+  margin: 16px 0 0 56px;
+  font-size: 13px;
+  line-height: 40px;
+  color: #6A6E71;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
