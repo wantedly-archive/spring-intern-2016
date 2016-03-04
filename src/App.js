@@ -46,10 +46,10 @@ export default class App extends Component {
     let popularIntern = data && data.data.sections[5]
 
     return (
-          <div>
+          <div className={styles.body}>
             <PortalHeader/>
             <div className={styles.base}>
-              <p>ベスト新着の募集</p>
+              <p className={styles.title}>ベスト新着の募集</p>
               <PortalSlider>
                 { popularProject.projects.map((project) => {
                   return <PortalProject project={project} key={project.id} />
@@ -58,7 +58,7 @@ export default class App extends Component {
             </div>
 
             <div className={styles.base}>
-              <p>新卒採用の募集</p>
+              <p className={styles.title}>新卒採用の募集</p>
               <PortalSlider>
                 { popularNewGrad.projects.map((project) => {
                   return <PortalProject project={project} key={project.id} />
@@ -67,7 +67,7 @@ export default class App extends Component {
             </div>
 
             <div className={styles.base}>
-              <p>新卒インターンの募集</p>
+              <p className={styles.title}>新卒インターンの募集</p>
               <PortalSlider>
                 { popularIntern.projects.map((project) => {
                   return <PortalProject project={project} key={project.id} />
