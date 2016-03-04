@@ -3,7 +3,6 @@ import Applications from './Applications';
 import RecruitCard from './RecruitCard';
 import PortalSlider from './PortalSlider';
 import RecommendedIntern from './RecommendedIntern';
-import styles from './style.css';
 
 export default class App extends Component {
     constructor(props) {
