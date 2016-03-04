@@ -32,13 +32,19 @@ export default class PortalSlider extends Component {
     render() {
         return (
                 <div className={styles.base}>
-                <a onClick={this.onClickPrev.bind(this)}>Prev</a>
-                <a onClick={this.onClickNext.bind(this)}>Next</a>
+                <div className={styles.left}>
+                <a onClick={this.onClickPrev.bind(this)} className={styles.prevBtn}>Prev</a>
+                </div>
+                <div className={styles.center}>
                 { this.props.children.map((child, index) => {
                     return <div style={this.calcStyle(index - this.state.currentIndex)} key={index} className={styles.item}>
                         { child }
                     </div>
                 }) }
+            </div>
+                <div className={styles.right}>
+                <a onClick={this.onClickNext.bind(this)} className={styles.nextBtn}>Next</a>
+                </div>
             </div>
         )
     }
