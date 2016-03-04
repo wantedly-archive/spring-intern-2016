@@ -75,9 +75,7 @@ export default class App extends Component {
               </PortalSlider>
             </div>
           </div>
-        ) 
+        )
   }
 
 }
-
-
