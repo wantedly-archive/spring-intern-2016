@@ -60,7 +60,7 @@ export default class App extends Component {
              { data ? (
                  <div className={styles.body}>
                      <PortalSliderBox projects={this.state.data.sections[3]} />
-                     <PortalSliderBoxCompany companies={this.state.data.sections[6]}/>
+                     
                      <PortalSliderBox projects={this.state.data.sections[4]}/>
                      <PortalSliderBox projects={this.state.data.sections[5]}/>
                 </div>
