@@ -1,7 +1,8 @@
-
 import React, { Component } from 'react';
+import Applications from './Applications';
 import RecruitCard from './RecruitCard';
 import PortalSlider from './PortalSlider';
+import RecommendedIntern from './RecommendedIntern';
 import styles from './style.css';
 
 export default class App extends Component {
@@ -32,15 +33,19 @@ export default class App extends Component {
     render() {
         let data = this.state.data
         let popularProject = data && this.state.data.data.sections[3]
+        let recommendedIntern = data && this.state.data.data.sections[5]
         // 見た目の定義
         return(
                 <div>
                 { data ? (
-                        <PortalSlider>
+                  <Applications>
+                    <PortalSlider>
                         { popularProject.projects.map((project) => {
                             return  <RecruitCard project={project} key={project.id} />
                         })}
                     </PortalSlider>
+                    <RecommendedIntern recommendedIntern={recommendedIntern} />
+                  </Applications>
                 ) : (
                         <p>NOW LOADING</p>
                 )}
