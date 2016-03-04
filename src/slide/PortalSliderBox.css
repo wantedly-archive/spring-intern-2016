@@ -1,0 +1,29 @@
+.PortalSliderBoxTitle {
+    font-weight: 600;
+    color: #9DA0A4;
+    font-size: 20px;
+    margin: 40px 0 28px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.PortalSliderBoxMoreButton {
+    right: 30px;
+    top: 50px;
+    font-size: 16px;
+    color: #00A4BB;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+}
+.PortalSliderBox {
+    width: 1035px;
+    position: relative;
+    height: 500px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1035px) {
+    .PortalSliderBox {
+        width: 100%;
+    }
+}
