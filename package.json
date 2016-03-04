@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wantedly/spring-intern-2016.git"
+    "url": "git+https://github.com/wantedly/spring-intern-2016.git"
   },
   "keywords": [
     "react",
@@ -45,6 +45,7 @@
     "eslint-plugin-react": "^3.11.3",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
+    "gulp": "^3.9.1",
     "postcss-loader": "^0.8.1",
     "react-css-modules": "^3.7.5",
     "rimraf": "^2.4.3",
@@ -57,5 +58,9 @@
     "isomorphic-fetch": "^2.2.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/wantedly/spring-intern-2016/issues"
+  },
+  "main": "devServer.js"
 }

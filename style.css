@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: black solid 1px;
+}
+
+.topbar {
+    display: flex;
+    height: 4em;
+    flex-wrap: wrap;
+}
+
+.topbar:first-chid {
+    margin-right: auto;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+}
+
+.logo {
+    font-size: 4em;
+    font-weight: bold;
+    color: skyblue;
+}
+
+.seereq {
+    flex: 1;
+}
+
+.seecom {
+    flex: 1;
+}
+
+.knowwork {
+    flex: 1;
+}
+
+.searchbar {
+    flex: 1;
+}
+
+.right {
+    flex: 1;
+    display: flex;
+}
+
+.searchjob {
+    width: 10em;
+}
+
+.notification_buttons {
+    display: flex;
+}
+
+.msg {
+    height: 4em;
+    width: 4em;
+}
+
+.you {
+    height: 4em;
+    width: 4em;
+}
+
+.global {
+    height: 4em;
+    width: 4em;
+}
+
+.mypage {
+    height: 4em;
+    width: 4em;
+}
+
+.top {
+    height: 15em;
+}
+
+.special {
+    height: 7em;
+}
+
+.best {
+    height: 7em;
+    background: green;
+}
+
+.newbie {
+    height: 7em;
+    background: green;
+}
+
+.intern {
+    height: 7em;
+    background: green;
+}
+
+.keyword {
+    height: 7em;
+    background: lightgray;
+}
+
+.older {
+    height: 7em;
+    backgroud: lightgreen;
+}
+
+.into {
+    height: 10em;
+    background: lightgreen;
+}
+
+.invitation {
+    height: 7em;
+    background: lightgreen;
+}
+
+.fromtype {
+    height: 7em;
+}
+
+.search {
+    display: flex;
+    height: 7em;
+}
+
+.fromregion {
+    flex: 1;
+}
+
+.fromindustry {
+    flex: 1;
+}
+
+.social {
+    height: 7em;
+}
+
+footer {
+    background: lightgray;
+}
+
+.footerheader {
+    height: 5em;
+    display: flex;
+}
+
+.footerfooter{
+    display: flex;
+}
+
+.about {
+    flex: 2;
+}
+
+.aboutwantedly {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 8em;
+}
+
+.about_item {
+    list-style-type: none;
+}
+
+.request {
+    flex: 1;
+}

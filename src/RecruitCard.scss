@@ -1,0 +1,80 @@
+$taggreen: #3b3;
+$tagorange: #ef9933;
+
+@mixin margin-tb ($m){
+    margin: {
+        top: $m;
+        bottom: $m;
+    }
+}
+
+* {
+    margin:0;
+    padding: 0;
+}
+
+.recruitCard {
+    width: 300px;
+    .cardHeader {
+        .tag {
+            display: flex;
+            font-size: .75em;
+            margin: {
+                bottom: .5em;
+            }
+            .tagItem{
+                margin: .25em;
+                padding: .25em;
+                border-radius: .5em;
+                list-style: none;
+            }
+
+            .orange {
+                border: $tagorange 1px solid;
+                color: $tagorange
+            }
+
+            .green {
+                background: $taggreen;
+                border: $taggreen 1px solid;
+                color: white;
+                font-weight: bold;
+            }
+        }
+        .eyecatch {
+            width: 300px;
+
+        }
+    }
+    .cardBody {
+        @include margin-tb(1em);
+        height: 7em;
+        .recruitTitle {
+            font-size: 1.25em;
+            @include margin-tb(1em);
+        }
+
+        .recruitMessage {
+            color: #444;
+        }
+    }
+
+    .cardFooter {
+        @include margin-tb(1em);
+
+        display: flex;
+        align-items: center;
+        * {
+            margin: .5em;
+        }
+        .companyImg {
+            width: 3em;
+            height: 3em;
+            border-radius: 1.5em;
+            box-shadow: 0 0 5px #ccc;
+        }
+        .companyName {
+            color: gray;
+        }
+    }
+}
