@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PortalProject from './PortalProject.js'
 import PortalSlider from './PortalSlider.js'
+import PortalHeader from './PortalHeader.js'
 
 export default class App extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ export default class App extends Component {
     let headers = new Headers()
     headers.append('Authorization', `Basic ${btoa('spring:intern_2016')}`)
     // Call API
-    let res = await fetch("https://www.wantedlyapp.com/api/intern/portal?user_id=1468880", { headers })
+    let res = await fetch("https://www.wantedlyapp.com/api/intern/portal", { headers })
     let json = await res.json()
     console.log(json) // 受け取った内容がコンソールに出力される
     this.setState({
@@ -34,12 +35,14 @@ export default class App extends Component {
     let popularProject = data && data.data.sections[3]
     return(
       <div>
+        <PortalHeader/>
         { data ? (
           <PortalSlider>
             { popularProject.projects.map((project) => {
               return <PortalProject project={project} key={project.id} />
             }) }
           </PortalSlider>
+
         ) : (
           <p>Now Loading...</p>
         ) }
