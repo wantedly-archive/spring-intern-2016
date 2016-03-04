@@ -102,7 +102,7 @@ render() {
       return <PortalProject project={project} key={project.id} />
     }) }
   </div>
-<div>
+</div>
 ```
 
 `PortalProject`Componentは、project属性を受けて、そのprojectのデータを描画するComponent。これを定義してみよう。
