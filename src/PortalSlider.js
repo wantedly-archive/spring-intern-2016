@@ -23,9 +23,11 @@ export default class PortalSlider extends Component {
     }
 
     onClickNext() {
+      if (this.state.currentIndex < this.props.children.length-3) {
         this.setState({
             currentIndex: this.state.currentIndex + 3
         })
+      }
     }
 
 
