@@ -6,6 +6,7 @@ export default class PortalSlider extends Component {
     constructor(props) {
         super(props)
         this.state = { currentIndex: 0 }
+        this.items = 3
     }
 
     calcStyle(index) {
@@ -17,15 +18,15 @@ export default class PortalSlider extends Component {
     onClickPrev() {
         if ( this.state.currentIndex != 0){
             this.setState({
-                currentIndex: this.state.currentIndex - 3
+                currentIndex: this.state.currentIndex - this.items
             })
         }
     }
 
     onClickNext() {
-      if (this.state.currentIndex < this.props.children.length-3) {
+      if (this.state.currentIndex < this.props.children.length - this.items) {
         this.setState({
-            currentIndex: this.state.currentIndex + 3
+            currentIndex: this.state.currentIndex + this.items
         })
       }
     }
