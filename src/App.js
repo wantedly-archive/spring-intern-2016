@@ -5,6 +5,9 @@ import PortalSliderBoxCompany from './slide/PortalProjectCompany/PortalProjectSl
 import styles from './styleSheet.css'
 
 
+import PortalProject from './PortalProject'
+import PortalSlider from './PortalSlider'
+
 export default class App extends Component {
     constructor(props) {
         super(props)
@@ -49,6 +52,7 @@ export default class App extends Component {
             })
     }
 
+
     render() {
         let data = this.state.data
         return (
@@ -66,4 +70,4 @@ export default class App extends Component {
           </div>
         )
       }
-}
+  }
